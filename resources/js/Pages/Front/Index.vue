@@ -63,13 +63,17 @@ const props = defineProps({
             </a>
             <div class="flex md:order-2">
                 <div v-if="canLogin">
-                    <button
+                    <a
                         v-if="$page.props.auth.user"
                         :href="route('dashboard')"
-                        class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0"
+                        class="flex items-center"
                     >
-                        Dashboard
-                    </button>
+                        <button
+                            class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0"
+                        >
+                            Dashboard
+                        </button>
+                    </a>
                     <template v-else>
                         <Link
                             :href="route('login')"
